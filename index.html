@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Rafi Aditya</title>
+    <!-- Script ini menarik seluruh fitur Tailwind langsung dari internet -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans scroll-smooth">
+    
+    <!-- Bagian Navigasi -->
+    <nav class="bg-white shadow-sm p-5 flex justify-between items-center fixed w-full top-0 z-50">
+        <div class="text-xl font-bold text-indigo-600">Portofolio</div>
+        <ul class="flex space-x-6">
+            <li><a href="#tentang" class="hover:text-indigo-500 font-medium">Tentang</a></li>
+            <li><a href="#proyek" class="hover:text-indigo-500 font-medium">Proyek</a></li>
+        </ul>
+    </nav>
+
+    <!-- Bagian Header Utama -->
+    <header class="text-center pt-32 pb-20 bg-indigo-600 text-white mt-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo, Saya Rafi Aditya</h1>
+        <p class="text-lg md:text-xl text-indigo-100">Computer Engineering Student & AI Engineer</p>
+    </header>
+
+    <!-- Bagian Tentang Saya -->
+    <section id="tentang" class="max-w-4xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold border-b-4 border-indigo-600 pb-2 mb-6 inline-block">Tentang Saya</h2>
+        <p class="text-slate-600 leading-relaxed text-lg text-justify">
+            Saya adalah mahasiswa Teknik Komputer di Institut Teknologi Sepuluh Nopember (ITS) dengan fokus pengembangan pada area Machine Learning, Computer Vision, dan Software Development. Saya terbiasa menggunakan Python dan FastAPI untuk membangun sistem yang terintegrasi.
+        </p>
+    </section>
+
+    <!-- Bagian Daftar Proyek -->
+    <section id="proyek" class="bg-slate-100 py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold border-b-4 border-indigo-600 pb-2 mb-8 inline-block">Proyek Utama</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Kartu Proyek 1 -->
+                <div class="bg-white p-6 border border-slate-200 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">VOLT-LOGIC</h3>
+                    <p class="text-slate-600 mb-5">Sistem inspeksi kesehatan baterai menggunakan Machine Learning dengan algoritma Random Forest dan backend FastAPI.</p>
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">AI/ML</span>
+                </div>
+                
+                <!-- Kartu Proyek 2 -->
+                <div class="bg-white p-6 border border-slate-200 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Shifu</h3>
+                    <p class="text-slate-600 mb-5">Game 2D berbasis Godot 4 yang dilengkapi mekanik time-reverse, multi-floor tilemaps, dan sistem multi-ending.</p>
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-semibold px-3 py-1 rounded-full">Game Dev</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Footer -->
+    <footer class="bg-slate-800 text-white text-center py-8">
+        <p>&copy; 2026 Rafi Aditya. Dibangun dengan HTML & Tailwind CSS.</p>
+    </footer>
+
+</body>
+</html>
