@@ -1,61 +1,72 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark"> <!-- "dark" di sini membuat web otomatis mulai dalam mode gelap -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Rafi Aditya</title> 
+    
+    <!-- Script Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi agar kita bisa mengganti tema dengan klik -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black text-white font-sans scroll-smooth selection:bg-white selection:text-black">
+<body class="bg-slate-50 dark:bg-black text-gray-900 dark:text-white font-sans scroll-smooth selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-500">
     
     <!-- Bagian Navigasi -->
-    <nav class="bg-black/90 backdrop-blur-md shadow-sm p-5 flex justify-between items-center fixed w-full top-0 z-50 border-b border-zinc-800">
-        <div class="text-xl font-bold text-white tracking-widest">PORTOFOLIO</div>
+    <nav class="bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-sm p-5 flex justify-between items-center fixed w-full top-0 z-50 border-b border-gray-200 dark:border-zinc-800 transition-colors duration-500">
+        <div class="text-xl font-bold tracking-widest text-black dark:text-white">PORTOFOLIO</div>
         <ul class="flex space-x-6 text-sm uppercase tracking-wider">
-            <li><a href="#tentang" class="text-zinc-500 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300">Profile</a></li>
-            <li><a href="#proyek" class="text-zinc-500 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300">Projects</a></li>
-            <li><a href="#kontak" class="text-zinc-500 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300">Contact</a></li>
+            <li><a href="#tentang" class="text-gray-500 dark:text-zinc-500 hover:text-black dark:hover:text-white transition-all duration-300">Profile</a></li>
+            <li><a href="#proyek" class="text-gray-500 dark:text-zinc-500 hover:text-black dark:hover:text-white transition-all duration-300">Projects</a></li>
+            <li><a href="#kontak" class="text-gray-500 dark:text-zinc-500 hover:text-black dark:hover:text-white transition-all duration-300">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Bagian Header Utama -->
-    <header class="text-center pt-36 pb-20 bg-black mt-10 relative overflow-hidden">
-        <!-- Efek cahaya bulan di latar belakang -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-white opacity-[0.03] rounded-full blur-3xl pointer-events-none"></div>
+    <header class="text-center pt-36 pb-20 bg-slate-100 dark:bg-black mt-10 relative overflow-hidden transition-colors duration-500">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-black dark:bg-white opacity-[0.03] rounded-full blur-3xl pointer-events-none"></div>
         
-        <img src="assets/icon.jpeg" alt="Foto Profil Rafi" class="w-32 h-32 mx-auto rounded-full mb-6 border-2 border-zinc-500 shadow-[0_0_20px_rgba(255,255,255,0.2)] object-cover relative z-10">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white uppercase tracking-tighter relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Welcome Hunters</h1>
-        <p class="text-lg md:text-xl text-zinc-400 font-light tracking-wide relative z-10">Embrace the chaos. Let's build something extraordinary.</p>
+        <!-- Foto Profil sebagai Tombol Saklar Tema -->
+        <img id="profilePic" src="assets/icon.jpeg" alt="Foto Profil Rafi" 
+             class="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-gray-300 dark:border-zinc-500 shadow-xl dark:shadow-[0_0_20px_rgba(255,255,255,0.2)] object-cover relative z-10 cursor-pointer hover:scale-105 transition-all duration-300"
+             onclick="toggleTheme()" title="Klik untuk berganti alter-ego!">
+             
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter relative z-10">Welcome Hunters</h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-zinc-400 font-light tracking-wide relative z-10">Embrace the chaos. Let's build something extraordinary.</p>
     </header>
 
     <!-- Bagian Profil & Tentang Saya -->
     <section id="tentang" class="max-w-4xl mx-auto py-16 px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             
-            <!-- Kartu Identitas (Name & Born) -->
-            <div class="md:col-span-1 bg-zinc-950 p-6 border border-zinc-800 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <h3 class="text-lg font-bold text-white uppercase tracking-widest border-b border-zinc-800 pb-3 mb-4">Identity</h3>
+            <div class="md:col-span-1 bg-white dark:bg-zinc-950 p-6 border border-gray-200 dark:border-zinc-800 rounded-xl shadow-sm dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-colors duration-500">
+                <h3 class="text-lg font-bold uppercase tracking-widest border-b border-gray-200 dark:border-zinc-800 pb-3 mb-4">Identity</h3>
                 <ul class="space-y-4">
                     <li>
-                        <span class="block text-xs text-zinc-500 uppercase tracking-wider">Full Name</span>
-                        <span class="block text-sm font-medium text-zinc-200 mt-1">Rafi Aditya Tsany Saputra</span>
+                        <span class="block text-xs text-gray-500 dark:text-zinc-500 uppercase tracking-wider">Full Name</span>
+                        <span class="block text-sm font-bold mt-1">Rafi Aditya Tsany Saputra</span>
                     </li>
                     <li>
-                        <span class="block text-xs text-zinc-500 uppercase tracking-wider">Born</span>
-                        <span class="block text-sm font-medium text-zinc-200 mt-1"> June 3, 2007</span>
+                        <span class="block text-xs text-gray-500 dark:text-zinc-500 uppercase tracking-wider">Born</span>
+                        <span class="block text-sm font-bold mt-1">June 2, 2007</span>
                     </li>
                     <li>
-                        <span class="block text-xs text-zinc-500 uppercase tracking-wider">City</span>
-                        <span class="block text-sm font-medium text-zinc-200 mt-1">Nganjuk</span>
+                        <span class="block text-xs text-gray-500 dark:text-zinc-500 uppercase tracking-wider">Role</span>
+                        <span class="block text-sm font-bold mt-1">AI Engineer & Developer</span>
                     </li>
                 </ul>
             </div>
 
-            <!-- Deskripsi -->
             <div class="md:col-span-2">
-                <h2 class="text-3xl font-bold border-b-2 border-white pb-2 mb-6 inline-block text-white tracking-tight">About Me</h2>
-                <p class="text-zinc-400 leading-relaxed text-lg text-justify font-light">
+                <h2 class="text-3xl font-bold border-b-2 border-black dark:border-white pb-2 mb-6 inline-block tracking-tight">About Me</h2>
+                <p class="text-gray-700 dark:text-zinc-400 leading-relaxed text-lg text-justify font-light">
                     Saya adalah mahasiswa Teknik Komputer di Institut Teknologi Sepuluh Nopember (ITS) dengan fokus pengembangan pada area Machine Learning, Computer Vision, dan Software Development. Saya terbiasa menggunakan Python dan FastAPI untuk membangun sistem yang terintegrasi dari ujung ke ujung.
                 </p>
             </div>
@@ -63,23 +74,21 @@
     </section>
 
     <!-- Bagian Daftar Proyek -->
-    <section id="proyek" class="bg-zinc-950 py-16 border-t border-zinc-900 relative">
+    <section id="proyek" class="bg-gray-100 dark:bg-zinc-950 py-16 border-t border-gray-200 dark:border-zinc-900 relative transition-colors duration-500">
         <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <h2 class="text-3xl font-bold border-b-2 border-white pb-2 mb-8 inline-block text-white tracking-tight">Projects</h2>
+            <h2 class="text-3xl font-bold border-b-2 border-black dark:border-white pb-2 mb-8 inline-block tracking-tight">Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Kartu Proyek 1 -->
-                <div class="bg-black p-6 border border-zinc-800 rounded-xl hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:border-zinc-500 transition-all duration-300 group">
-                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-zinc-300 transition-colors">VOLT-LOGIC</h3>
-                    <p class="text-zinc-400 mb-6 font-light">Sistem inspeksi kesehatan baterai menggunakan Machine Learning dengan algoritma Random Forest dan backend FastAPI.</p>
-                    <span class="bg-white text-black text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm">AI/ML</span>
+                <div class="bg-white dark:bg-black p-6 border border-gray-300 dark:border-zinc-800 rounded-xl hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 group">
+                    <h3 class="text-xl font-bold mb-3">VOLT-LOGIC</h3>
+                    <p class="text-gray-600 dark:text-zinc-400 mb-6 font-light">Sistem inspeksi kesehatan baterai menggunakan Machine Learning dengan algoritma Random Forest dan backend FastAPI.</p>
+                    <span class="bg-black dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm">AI/ML</span>
                 </div>
                 
-                <!-- Kartu Proyek 2 -->
-                 <div class="bg-black p-6 border border-zinc-800 rounded-xl hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:border-zinc-500 transition-all duration-300 group">
-                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-zinc-300 transition-colors">2EZ4U</h3>
-                    <p class="text-zinc-400 mb-6 font-light">Aplikasi food delivery menggunakan implementasi struktur data Array dan LinkedList secara komprehensif.</p>
-                    <span class="bg-white text-black text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm">Software Dev</span>
+                 <div class="bg-white dark:bg-black p-6 border border-gray-300 dark:border-zinc-800 rounded-xl hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 group">
+                    <h3 class="text-xl font-bold mb-3">2EZ4U</h3>
+                    <p class="text-gray-600 dark:text-zinc-400 mb-6 font-light">Aplikasi food delivery menggunakan implementasi struktur data Array dan LinkedList secara komprehensif.</p>
+                    <span class="bg-black dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm">Software Dev</span>
                 </div>    
             </div>
         </div>
@@ -87,28 +96,44 @@
 
     <!-- Bagian Kontak -->
     <section id="kontak" class="max-w-4xl mx-auto py-16 px-6">
-        <h2 class="text-3xl font-bold border-b-2 border-white pb-2 mb-8 inline-block text-white tracking-tight text-center w-full md:w-auto md:text-left">Establish Connection</h2>
+        <h2 class="text-3xl font-bold border-b-2 border-black dark:border-white pb-2 mb-8 inline-block tracking-tight text-center w-full md:w-auto md:text-left">Establish Connection</h2>
         
         <ul class="space-y-4 max-w-md mx-auto md:mx-0">
-            <li class="flex items-center justify-between border-b border-zinc-800 pb-3">
-                <span class="text-zinc-500 uppercase tracking-widest text-xs font-bold">Email</span>
-                <a href="mailto:rafi.30607@gmail.com" class="text-zinc-300 hover:text-white transition-colors font-medium tracking-wide">rafi.30607@gmail.com</a>
+            <li class="flex items-center justify-between border-b border-gray-300 dark:border-zinc-800 pb-3">
+                <span class="text-gray-500 dark:text-zinc-500 uppercase tracking-widest text-xs font-bold">Email</span>
+                <a href="mailto:rafi.30607@gmail.com" class="text-gray-800 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-white transition-colors font-medium tracking-wide">rafi.30607@gmail.com</a>
             </li>
-            <li class="flex items-center justify-between border-b border-zinc-800 pb-3">
-                <span class="text-zinc-500 uppercase tracking-widest text-xs font-bold">WhatsApp</span>
-                <a href="https://wa.me/6281252052064" class="text-zinc-300 hover:text-white transition-colors font-medium tracking-wide">+62 812-5205-2064</a>
+            <li class="flex items-center justify-between border-b border-gray-300 dark:border-zinc-800 pb-3">
+                <span class="text-gray-500 dark:text-zinc-500 uppercase tracking-widest text-xs font-bold">WhatsApp</span>
+                <a href="https://wa.me/6281252052064" class="text-gray-800 dark:text-zinc-300 hover:text-green-600 dark:hover:text-white transition-colors font-medium tracking-wide">+62 812-5205-2064</a>
             </li>
-            <li class="flex items-center justify-between border-b border-zinc-800 pb-3">
-                <span class="text-zinc-500 uppercase tracking-widest text-xs font-bold">GitHub</span>
-                <a href="https://github.com/MoonyShouX" class="text-zinc-300 hover:text-white transition-colors font-medium tracking-wide">MoonyShouX</a>
+            <li class="flex items-center justify-between border-b border-gray-300 dark:border-zinc-800 pb-3">
+                <span class="text-gray-500 dark:text-zinc-500 uppercase tracking-widest text-xs font-bold">GitHub</span>
+                <a href="https://github.com/MoonyShouX" class="text-gray-800 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-white transition-colors font-medium tracking-wide">MoonyShouX</a>
             </li>
         </ul>
     </section>
 
     <!-- Bagian Footer -->
-    <footer class="bg-black text-zinc-600 text-center py-8 border-t border-zinc-900 text-sm tracking-wide">
+    <footer class="bg-slate-100 dark:bg-black text-gray-500 dark:text-zinc-600 text-center py-8 border-t border-gray-300 dark:border-zinc-900 text-sm tracking-wide transition-colors duration-500">
         <p>&copy; 2026 Rafi Aditya. Built in the shadows with HTML & Tailwind CSS.</p>
     </footer>
 
+    <!-- Script Pergantian Tema -->
+    <script>
+        function toggleTheme() {
+            // Membalikkan class 'dark' di elemen paling luar <html>
+            document.documentElement.classList.toggle('dark');
+            
+            const img = document.getElementById('profilePic');
+            
+            // Mengecek apakah web sedang dalam mode gelap
+            if (document.documentElement.classList.contains('dark')) {
+                img.src = 'assets/icon.jpeg'; // Foto Moon Knight (Dark Mode)
+            } else {
+                img.src = 'assets/icon2.jpeg'; // Foto Mr. Knight/Normal (Light Mode)
+            }
+        }
+    </script>
 </body>
 </html>
