@@ -1,0 +1,4 @@
+1. diberi pt-36 untuk memberi jarak, agar tidak menutupi halaman paling atas. jika pt-36 dihapus, maka gambar yang ada paling atas akan tertutup. dan isi website lainnya bisa tertimpa.
+2. secara singkat perubahan yang terjadi pada html ialah merubah mode dari hitam ke putih. dikarenakan basic nya merupakan hitam dan kelas dark ditambah ke tag html, maka ketika tombol dipencet semua warna berupa menjadi kebalikannya.
+3. a. foto profil akan membesar menjadi 105 dan mengalami transition perlahan dengan waktu 300 ms ke ukuran 105, dan menjadi normal dengan waktu 300 ms juga ketika dilepas
+3. b. foto akan membesar menjadi 105 tanpa ada effect transisi dan tidak smooth jadi lgsg besar kecil, maupun kecil ke besar.
